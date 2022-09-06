@@ -87,10 +87,8 @@ export class AppComponent implements OnInit{
     if(this.size==null){
       this.size=3;
     }
-    console.log('page'+this.page);
-    console.log('size'+this.size);
-    console.log('count'+this.countVar)
-    return (this.countVar > (this.page+1 * this.size))
+
+    return (this.countVar > (this.page * this.size))
   }
   public _max = this.max();
   public size:any;
@@ -127,7 +125,6 @@ export class AppComponent implements OnInit{
   if(this.size==null){
     this.size=3;
   }
-
     this.getCruises(this.page,this.size);
     this.count();
 
