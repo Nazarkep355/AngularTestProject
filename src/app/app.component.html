@@ -321,7 +321,7 @@
   <nav aria-label="Page navigation example">
     <ul class="pagination">
       <li class="page-item"><a class="page-link" *ngIf="page>1" href="#" (click)="page=page-1;max();getCruises(page,size)">{{page-1}}</a></li>
-      <li class="page-item"><a class="page-link" href="#" (click)="max();getCruises(page,size)">{{page}}</a></li>
+      <li class="page-item"><a style="color: black" class="page-link" >{{page}}</a></li>
       <li class="page-item"><a class="page-link" href="#" *ngIf="max()" (click)="page=page+1;max();getCruises(page,size)">
       {{page+1}}</a></li>
     </ul>
@@ -350,7 +350,7 @@
           <td>{{portsToString(cruise.route)}}
           </td>
           <td>
-            {{getDepartureDate(cruise)}}
+            {{getDepartureDate(cruise) | date:'short'}}
           </td>
           <!--      <td>-->
           <!--      </td>-->

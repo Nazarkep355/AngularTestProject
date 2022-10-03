@@ -73,9 +73,8 @@ export class AppComponent implements OnInit{
       }
     }
   }
-  public getDepartureDate(cruise:Cruise):string{
-    let date = this.getDateFromString(cruise.dates[0]).toString();
-    return date.split(":00 ")[0]
+  public getDepartureDate(cruise:Cruise):Date{
+    return this.getDateFromString(cruise.dates[0]);
   }
   public isThereFreePlaces(cruise:Cruise):boolean{
     return cruise.ship.totalSeats>(cruise.economTickets+cruise.middleTickets+cruise.premiumTickets);
@@ -90,7 +89,6 @@ export class AppComponent implements OnInit{
 
     return (this.countVar > (this.page * this.size))
   }
-  public _max = this.max();
   public size:any;
   public cruises:any;
   public countVar:any;
